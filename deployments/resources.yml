@@ -102,7 +102,7 @@ Resources:
     DeletionPolicy: Delete
     Properties:
       DBInstanceIdentifier: postgresinstance
-      DBName: microservices
+      DBName: microDB
       DBInstanceClass: db.t2.micro
       StorageType: gp2
       AllocatedStorage: 20
@@ -151,7 +151,7 @@ Resources:
   RabbitURLParameter:
     Type: AWS::SSM::Parameter
     Properties:
-      Name: /Microservices/RabbitUrl
+      Name: /MicroTask/RabbitUrl
       Type: String
       Description: A connection string for RabbitMQ
       Value:
@@ -162,7 +162,7 @@ Resources:
   PostgresURLParameter:
     Type: AWS::SSM::Parameter
     Properties:
-      Name: /Microservices/PostgresUrl
+      Name: /MicroTask/PostgresUrl
       Type: String
       Description: A connection string for Postgres
       Value:
@@ -173,7 +173,7 @@ Resources:
   RedisURLParameter:
     Type: AWS::SSM::Parameter
     Properties:
-      Name: /Microservices/RedisUrl
+      Name: /MicroTask/RedisUrl
       Type: String
       Description: A connection string for Redis
       Value: !Sub ${Redis.RedisEndpoint.Address}:${Redis.RedisEndpoint.Port}

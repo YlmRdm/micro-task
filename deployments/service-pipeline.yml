@@ -18,10 +18,10 @@ Parameters:
     Default: \[BuildAll\]
   ArtifactBucket:
     Type: AWS::SSM::Parameter::Value<String>
-    Default: /Microservices/ArtifactBucket
+    Default: /MicroTask/ArtifactBucket
   CodePipelineServiceRoleArn:
     Type: AWS::SSM::Parameter::Value<String>
-    Default: /Microservices/CodePipelineServiceRoleArn
+    Default: /MicroTask/CodePipelineServiceRoleArn
 
 Resources:
 

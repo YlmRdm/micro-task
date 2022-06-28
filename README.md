@@ -20,7 +20,7 @@ To run the example locally, clone the Github repository and start the services u
 
 ```bash
 git clone https://github.com/YlmRdm/micro-task
-cd microservices
+cd micro-task
 ```
 ```bash
 docker-compose up
@@ -32,7 +32,7 @@ From the `deployments` directory, create the pipeline stack. It will provision a
 
 ```bash
 aws cloudformation deploy \
-    --stack-name Microservices \
+    --stack-name MicroTask \
     --template-file pipeline.yml \
     --parameter-overrides \
         EnvironmentName=msprod \
@@ -74,9 +74,9 @@ To access the database, launch a new container that will connect to our Postgres
 
 ```bash
 docker run -it --rm \
-    --network microservices_network \
+    --network micro_network \
     postgres:13-alpine \
-    psql -h postgres -U postgres -d microservices
+    psql -h postgres -U postgres -d micro-task
 ```
 
 Select everything from the messages table:
@@ -91,7 +91,7 @@ To inspect Redis, connect to its container via redis-cli.
 
 ```bash
 docker run -it --rm \
-    --network microservices_network \
+    --network micro_network \
     redis:6-alpine \
     redis-cli -h redis
 ```
@@ -112,7 +112,7 @@ Access the RabbitMQ management interface by visiting `localhost:15672` with `gue
 To access the back end service, attach to its docker container from a separate terminal window. Messages from the front end will show up here. Also, standart input will be sent to the front end for two way communication.
 
 ```bash
-docker attach microservices_backend
+docker attach micro_backend
 ```
 </details>
 

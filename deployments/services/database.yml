@@ -78,9 +78,9 @@ Resources:
               awslogs-stream-prefix: !Ref 'ServiceName'
           Environment:
             - Name: RABBIT_URL
-              Value: '{{resolve:ssm:/Microservices/RabbitUrl}}'
+              Value: '{{resolve:ssm:/MicroTask/RabbitUrl}}'
             - Name: POSTGRES_URL
-              Value: '{{resolve:ssm:/Microservices/PostgresUrl}}'
+              Value: '{{resolve:ssm:/MicroTask/PostgresUrl}}'
 
   # The service. The service is a resource which allows you to run multiple
   # copies of a type of task, and gather up their logs and metrics, as well

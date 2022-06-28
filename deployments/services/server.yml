@@ -15,8 +15,7 @@ Parameters:
     AllowedValues: [Fargate, EC2]
   ImageUrl:
     Type: String
-    Description: The url of a docker image that contains the application process that
-                 will handle the traffic for this service
+    Description: The url of a docker image that contains the application process that will handle the traffic for this service
   ContainerPort:
     Type: Number
     Default: 80
@@ -96,9 +95,9 @@ Resources:
               awslogs-stream-prefix: !Ref 'ServiceName'
           Environment:
             - Name: RABBIT_URL
-              Value: '{{resolve:ssm:/Microservices/RabbitUrl}}'
+              Value: '{{resolve:ssm:/MicroTask/RabbitUrl}}'
             - Name: REDIS_URL
-              Value: '{{resolve:ssm:/Microservices/RedisUrl}}'
+              Value: '{{resolve:ssm:/MicroTask/RedisUrl}}'
             - Name: SERVER_ADDR
               Value: 0.0.0.0:80
 

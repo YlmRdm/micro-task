@@ -46,7 +46,7 @@ services:
             rabbitmq:
                 condition: service_healthy
     backend:
-        container_name: microservices_backend
+        container_name: micro_backend
         build:
             context: .
             dockerfile: backend.Dockerfile
@@ -81,4 +81,4 @@ services:
                 condition: service_healthy
 networks:
     default:
-        name: microservices_network
+        name: micro_network

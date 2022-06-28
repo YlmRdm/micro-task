@@ -1,6 +1,6 @@
-create database microservices;
+create database microDB;
 
-\c microservices
+\c microDB
 
 create table messages (
   id serial primary key,

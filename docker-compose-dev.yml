@@ -18,4 +18,4 @@ services:
             - 6379:6379
 networks:
     default:
-        name: microservices_network
+        name: micro_network

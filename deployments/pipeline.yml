@@ -27,7 +27,7 @@ Resources:
   ArtifactBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub microservices-${EnvironmentName}-${AWS::AccountId}
+      BucketName: !Sub micro-task-${EnvironmentName}-${AWS::AccountId}
       VersioningConfiguration: 
         Status: Enabled
 
@@ -460,13 +460,13 @@ Resources:
   SSMArtifactBucket:
     Type: AWS::SSM::Parameter
     Properties:
-      Name: /Microservices/ArtifactBucket
+      Name: /MicroTask/ArtifactBucket
       Type: String
       Value: !Ref ArtifactBucket
   SSMCodePipelineServiceRoleArn:
     Type: AWS::SSM::Parameter
     Properties:
-      Name: /Microservices/CodePipelineServiceRoleArn
+      Name: /MicroTask/CodePipelineServiceRoleArn
       Type: String
       Value: !GetAtt CodePipelineServiceRole.Arn
 
